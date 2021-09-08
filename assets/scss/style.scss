@@ -1,0 +1,355 @@
+/**
+ * @Main scss for (Template/Project Name)
+ * @project     - Project Name
+ * @author      - 
+ * @created_by  - kawsar bin siraj
+ * @created_at  - 
+ * @modified_by -
+ */
+
+
+/* fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+// font-family: 'Mulish', sans-serif;
+/* fonts import -END */
+
+
+
+
+
+
+/* reset, root */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    font-family: 'Mulish', sans-serif;
+}
+
+:root {
+    --clr-black: #152C1A;
+    --clr-dark: #1A251C;
+    --clr-chablis: #FFE9DC;
+    --clr-green: #4F9646;
+    --clr-green-light: #E2F8E0;
+    --clr-gray: #4E5C51;
+    --clr-gray-light: #919D94;
+    --clr-orange: #FF9457;
+    --clr-red: #FF4848;
+    --clr-pink: #FF8787;
+    --clr-theme: #F5F8F5;
+    --clr-gray-deep: #758278;
+
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1110px;
+    }
+
+}
+
+/* reset, root - END */
+
+
+
+
+
+/* css for package-buying-steps */
+.package-buying-steps {
+
+    // package-duration-panel
+    .package-duration-panel {
+        .duration-panel {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 15px;
+            @media (max-width: 1200px){
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media (max-width: 991px){
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media (max-width: 575px){
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        .package-duration {
+            .form-check-label {
+                .border-green {
+                    border: 2px solid transparent;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                }
+
+                .price {
+                    font-size: 36px;
+                }
+
+                .check-icon {
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 50%;
+                    border: 2px solid var(--clr-gray-light);
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+
+                    .icon {
+                        position: absolute;
+                        top: -3px;
+                        right: -3px;
+                    }
+                }
+
+                input {
+                    &:checked~ {
+                        .border-green {
+                            border-color: var(--clr-green);
+                        }
+
+                        .check-icon {
+                            .icon {
+                                display: block !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // End package-duration-panel
+
+    // find-domain-panel
+    .find-domain-panel {
+        .next-btn {
+            opacity: 0.5 !important;
+        }
+    }
+
+    .search-your-domain {
+        .form-control {
+            border: 2px solid #E4EAE3;
+
+            &::placeholder {
+                font-size: 14px;
+            }
+        }
+
+        .form-control,
+        button {
+            height: 52px;
+            box-shadow: none;
+            font-size: 15px;
+        }
+
+        .start-100 {
+            left: 79.5% !important;
+        }
+
+        .i-have-domain {
+            a {
+                &:hover {
+                    color: var(--clr-green);
+                }
+            }
+        }
+
+    }
+
+    // End find-domain-panel
+
+
+    // domain-search-result
+    .domain-search-result {
+        .search-result {
+            .form-check {
+                margin-bottom: 0;
+            }
+
+            .form-check-label {
+                z-index: 10;
+
+                .radio-icon {
+                    left: 0;
+                    bottom: 0;
+                }
+
+                .radio-icon-normal {
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    left: 20px;
+                    bottom: 20px;
+                    border: 1px solid var(--clr-gray-light);
+                    border-radius: 50%;
+                }
+
+                input {
+                    &:checked~ {
+                        .radio-icon-normal>img {
+                            display: block !important;
+                        }
+
+                        .active-bg-clr {
+                            display: block !important;
+                            z-index: -1;
+                            border: transparent;
+                        }
+                    }
+                }
+            }
+
+            .already-taken-domain {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    // End -  domain-search-result
+
+
+
+
+    // checkout-panel 
+    .checkout-panel {
+        .order-checkout {
+            .price-info{
+                @media (max-width: 575px){
+                    text-align: left !important;
+                }
+            }
+            .checkout-item {
+                border-bottom: 1px solid #EFF3EE;
+
+                .select-duration {
+                    .form-select {
+                        font-size: 14px;
+                        color: var(--clr-gray);
+                        box-shadow: none;
+                        border: 1px solid #E4EAE3;
+                        height: 42px;
+                    }
+                }
+
+                .fs-0 {
+                    opacity: 0;
+                }
+
+                .is-auto-renew {
+                    .switch {
+                        position: relative;
+                        display: inline-block;
+                        width: 42px;
+                        height: 24px;
+
+                        input {
+                            opacity: 0;
+                            width: 0;
+                            height: 0;
+
+                            &:checked+.slider {
+                                background-color: #2196F3;
+
+                                &::before {
+                                    -webkit-transform: translateX(18px);
+                                    -ms-transform: translateX(18px);
+                                    transform: translateX(18px);
+                                }
+                            }
+
+                            &:focus+.slider {
+                                box-shadow: 0 0 1px #2196F3;
+                            }
+                        }
+
+                        .slider {
+                            position: absolute;
+                            cursor: pointer;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: #D6E6EB;
+                            -webkit-transition: .4s;
+                            transition: .4s;
+                            border-radius: 30px;
+
+                            &::before {
+                                position: absolute;
+                                content: "";
+                                height: 18px;
+                                width: 18px;
+                                left: 4px;
+                                bottom: 3px;
+                                background-color: white;
+                                -webkit-transition: .4s;
+                                transition: .4s;
+                                border-radius: 50%;
+                            }
+
+                            .slider.round {
+                                border-radius: 34px;
+
+                                &::before {
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+                .checkout-title{
+                    @media (max-width: 480px){
+                        font-size: 14px !important;
+                    }
+                }
+                .domain{
+                    @media (max-width: 480px){
+                        font-size: 10px !important;
+                        line-height: 16px;
+                    }
+                }
+                .select-duration{
+                    .form-select{
+                        @media (max-width: 480px){
+                            padding: 0 !important;
+                            font-size: 10px;
+                            background-position: right center;
+                            background-size: 10px 8px;
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // End -  checkout-panel
+
+
+
+}
+
+/* css for package-buying-steps - END*/
+
+
+
+
+
+
+
+
+
+
+
